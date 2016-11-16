@@ -53,7 +53,7 @@ function submitLogin(){
               currentUsername = result.username;
               currentUserType = result.typeID;
 
-              $("#MainLogo").text("  " + currentUsername);
+              $("#MainLogo").text('\xA0'+'\xA0'+currentUsername+'\xA0'+'\xA0');
 
               sessionStorage.setItem("user", JSON.stringify(result));
               alert("You have logged in successfully!");
