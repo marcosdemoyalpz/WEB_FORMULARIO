@@ -43,8 +43,8 @@
   <div class="container" style="height:auto;min-height:95vh;">
     <nav>
       <div class="nav-wrapper cyan">
-        <a href="#" onClick="window.location.reload()" class="brand-logo left">&nbsp;&nbsp;ISC4151617-01</a>
-        <ul class="right hide-on-med-and-down" id="navMenu" hidden>
+        <a href="#" id="MainLogo" onClick="window.location.reload()" class="brand-logo center">&nbsp;&nbsp;ISC4151617-01</a>
+        <ul class="left hide-on-med-and-down" id="navMenu" hidden>
           <li><a onclick="showHideListado();">&nbsp;Listado de Usuarios</a></li>
           <li><a onclick="showHideFormulario();">&nbsp;Formulario</a></li>
         </ul>
@@ -120,14 +120,14 @@
 
                 <div class='row'>
                   <div class='input-field col s12'>
-                    <input class='validate' type='text' name='username' id='username' />
+                    <input class='validate' type='text' name='usernameNew' id='usernameNew' />
                     <label for='username'>Enter your username</label>
                   </div>
                 </div>
 
                 <div class='row'>
                   <div class='input-field col s12'>
-                    <input class='validate' type='password' name='password' id='password' />
+                    <input class='validate' type='password' name='registerPassword' id='registerPassword' />
                     <label for='password'>Enter your password</label>
                   </div>
                   <div class='input-field col s12'>
@@ -139,7 +139,7 @@
                 <br />
                 <center>
                   <div class='row'>
-                    <button type='button' name='btn_login' class='col s12 btn btn-large waves-effect cyan' onclick="registerUser();">Register</button>
+                    <button type='button' name='btn_login' class='col s12 btn btn-large waves-effect cyan' onclick="submitRegister();">Register</button>
                   </div>
                 </center>
               </form>
@@ -219,6 +219,7 @@
                     <thead>
                       <tr>
                         <th data-field="usernameTH">Username</th>
+                        <th data-field="typeTH">User Type</th>
                         <th data-field="activeTH">Active</th>
                       </tr>
                     </thead>

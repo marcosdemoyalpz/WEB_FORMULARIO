@@ -46,7 +46,9 @@ module.exports = {
   register: function (req, res, next){
     var bodyUser = {
       username  : req.body.username,
-      password  : req.body.password
+      password  : req.body.password,
+      typeID: 2,
+      active: true
     }
 
     var user = User.findOne({
@@ -72,6 +74,7 @@ module.exports = {
 
                 var obj = '{'
                 +'"id":"' + result.id + '",'
+                +'"typeID":"' + result.typeID + '",'
                 +'"username":"' + result.username + '",'
                 +'"token":"' + token + '"'
                 +'}';
@@ -129,6 +132,7 @@ module.exports = {
 
         var obj = '{'
         +'"id":"' + result.id + '",'
+        +'"typeID":"' + result.typeID + '",'
         +'"username":"' + result.username + '",'
         +'"token":"' + token + '"'
         +'}';

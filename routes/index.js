@@ -9,6 +9,7 @@ var getUsersodel = require('../model/getUsers');
 
 
 router.post('/login', usermodel.postLogin);
+router.post('/register', usermodel.register);
 router.get('/getAllUsers', getUsersodel.getUsers);
 
 // router.get('/restByType/:id/:page/:perPage', restByTypeModel.getRestaurantDetail);
