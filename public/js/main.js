@@ -135,9 +135,18 @@ function getUserList()
       if(result){
         console.log(JSON.stringify(result));
         for (var i = 0; i < result.length; i++) {
-          $("#usersTable tbody").append(
-            '<tr><td>' + result[i].username + '</td><td>'+ result[i].typeID +'</td><td>' + result[i].active + '</td></tr>'
+          if (i==0) {
+            $("#usersTable tbody").append(
+            // '<tr><td>' + result[i].username + '</td><td>'+ result[i].typeID +'</td><td>' + result[i].active + '</td></tr>'
+            '<tr><td>' + result[i].username + '</td><td>'+ result[i].typeID +'</td><td>' + '<div class="switch"><label>Off<input disabled type="checkbox" checked><span class="lever"></span>On</label></div>' + '</td></tr>'
             );
+          }
+          else if (i>0) {
+            $("#usersTable tbody").append(
+            // '<tr><td>' + result[i].username + '</td><td>'+ result[i].typeID +'</td><td>' + result[i].active + '</td></tr>'
+            '<tr><td>' + result[i].username + '</td><td>'+ result[i].typeID +'</td><td>' + '<div class="switch"><label>Off<input type="checkbox" checked><span class="lever"></span>On</label></div>' + '</td></tr>'
+            );
+          }
         }
       }
 
